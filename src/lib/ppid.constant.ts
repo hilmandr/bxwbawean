@@ -48,7 +48,7 @@ export const BERKALASUB: Array<TBerkalaSub> = [
                 judul: "Febria Setyowati Suyanto",
                 deskripsi: "Kepala Kantor UPBU Harun Thohir - Gresik",
                 gambar: "/images/ppid/febria.jpg",
-                paragraf: "Alamat kantor JI. Medan Merdeka Barat No.8 Gd. Karsa Lt. 8 Jakarta Pusat 10110 Telp. (021) 3840789, 3455665 Ext. 1267. Lahir di Palembang pada tanggal 18 Desember 1956. Menempuh pendidikan sarjana di bidang arsitektur Universitas Gajah Mada pada tahun 1981. Pernah menjabat sebagai Presiden Direktur PT Pembangunan Jaya Ancol sejak tahun 2004, kemudian menjadi Direktur Utama PT Jakarta Propertindo (JakPro) hingga tahun 2013. Terakhir Beliau menjabat sebagai Direktur Utama Angkasa Pura II pada tahun 2015 sampai Juli 2016. Pada tanggal 27 Juli 2016, Presiden Joko Widodo melantik beliau sebagai Menteri Perhubungan pada Kabinet Kerja Tahun 2014-2019, pada Oktober 2019 Budi Karya Sumadi kembali dilantik sebagai Menteri Perhubungan pada Kabinet Indonesia Maju periode 2019-2024.",
+                paragraf: "",
                 link: "LHKPN Febria Setyowati Suyanto",
                 path: "/"
             }

@@ -1,6 +1,8 @@
+import Link from "next/link";
 import Image from "next/image";
 import Container from "~/components/common/container";
 import PpidHeadingTitle from "~/components/common/heading-ppid";
+import { Button } from "~/components/ui/button";
 
 export default function PermohonanInformasiPublik() {
     return (
@@ -18,10 +20,13 @@ export default function PermohonanInformasiPublik() {
                     </div>
                 </div>
             </PpidHeadingTitle>
-            <Container className=" lg:px-16 py-10 items-center justify-center flex w-full">
+            <Container className=" lg:px-16 py-10 items-center justify-center flex flex-col w-full">
                 <div className=" flex w-full max-w-4xl items-center justify-center relative aspect-[4.1/3]">
                     <Image src="/images/ppid/permohonan-inf-publik.png" alt="" fill className=" w-full h-full object-cover object-center"/>
                 </div>
+                <Link href="/pdf/1. Formulir permohonan informasi.docx" target="_blank" className=" mt-4">
+                    <Button>Unduh Formulir Permohonan Informasi</Button>
+                </Link>
             </Container>
         </>
     )
