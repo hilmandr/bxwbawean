@@ -56,3 +56,12 @@ export const pesan = pgTable("pesan", {
 
 export type Pesan = InferSelectModel<typeof pesan>
 export type NewPesan = InferInsertModel<typeof pesan>
+
+
+export const user = pgTable("user", {
+  id: varchar("id").primaryKey(),
+  username: varchar("username").notNull(),
+  password: varchar("password").notNull(),
+});
+
+export type User = InferSelectModel<typeof user>;
