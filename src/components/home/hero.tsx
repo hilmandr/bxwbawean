@@ -46,8 +46,8 @@ export default function Hero() {
         </Container>
         <Mouse
           size="36"
-          color="#555555"
-          className="absolute bottom-14 animate-bounce"
+          color="#3a3a3a"
+          className="absolute bottom-6 animate-bounce"
           variant="Broken"
         />
       </div>

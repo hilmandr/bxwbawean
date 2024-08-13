@@ -1,5 +1,8 @@
 import { beritaRouter } from "~/server/api/routers/berita";
 import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
+import { laporanHarianRouter } from "./routers/laporan-harian";
+import { jadwalPenerbanganRouter } from "./routers/jadwal-penerbangan";
+import { pesanRouter } from "./routers/pesan";
 
 /**
  * This is the primary router for your server.
@@ -8,6 +11,9 @@ import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
  */
 export const appRouter = createTRPCRouter({
   berita: beritaRouter,
+  laporan: laporanHarianRouter,
+  jadwal: jadwalPenerbanganRouter,
+  pesan: pesanRouter,
 });
 
 // export type definition of API

@@ -3,12 +3,18 @@ import { Icon, IconProps } from "iconsax-react";
 export type TSidenav = {
   title: string;
   path: string;
-  icon?: Icon;
+  icon?: IconType | Icon;
 };
 
 export type TMenu = {
   title: string;
   path: string;
+  variant?: IconProps["variant"];
+  submenu?: TMenu[];
+};
+export type TMenuPpid = {
+  title: string;
+  item: number;
   variant?: IconProps["variant"];
   submenu?: TMenu[];
 };
@@ -47,3 +53,44 @@ export type TSosmedFooter = {
   icon: Icon;
   path: string;
 };
+
+export type TBerkala = {
+  no?: number;
+  judul: string;
+  deskripsi: string;
+  paragraf? :string,
+  gambar?: string;
+  link?: string;
+  path?: string;
+}
+
+export type TBerkalaSub = {
+  no?: number;
+  judul: string;
+  deskripsi: string;
+  paragraf? :string,
+  gambar?: string;
+  link?: string;
+  path?: string;
+  subIsi?: TBerkala[];
+}
+
+export type TSertaMerta = {
+  no?: number;
+  judul: string;
+  deskripsi: string;
+  paragraf? :string,
+  gambar?: string;
+  link?: string;
+  path?: string;
+}
+
+export type TSetiapSaat = {
+  no?: number;
+  judul: string;
+  deskripsi: string;
+  paragraf? :string,
+  gambar?: string;
+  link?: string;
+  path?: string;
+}

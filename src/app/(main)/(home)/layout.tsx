@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import React from "react";
-
 import Container from "~/components/common/container";
 import Hero from "~/components/home/hero";
 
@@ -9,26 +8,20 @@ interface HomeLayoutProps {
   layanan: ReactNode;
   dailyReport: ReactNode;
   berita: ReactNode;
+  pengaduan: ReactNode;
   faq: ReactNode;
 }
 
-export default function HomeLayout({
-  children,
-  berita,
-  layanan,
-  dailyReport,
-  faq,
-}: HomeLayoutProps) {
+export default function HomeLayout({ children, layanan, dailyReport, berita, faq, pengaduan }: HomeLayoutProps) {
   return (
     <>
       <Hero />
-      <Container>
         {children}
         {layanan}
         {dailyReport}
         {berita}
+        {pengaduan}
         {faq}
-      </Container>
     </>
   );
 }
