@@ -23,6 +23,17 @@ import {
   AccordionTrigger,
 } from "../ui/accordion"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "~/components/ui/sheet"
+import { HambergerMenu } from "iconsax-react";
+
 
 export default function Header() {
   // hooks
@@ -170,8 +181,96 @@ export default function Header() {
                   </DialogHeader>
                 </DialogContent>
               </Dialog>
-            </nav>
+            </nav >
             {/* end: right */}
+
+            <nav className="lg:hidden items-center justify-center flex">
+              <Sheet>
+                <SheetTrigger><HambergerMenu color="#fafafa" size={36}/></SheetTrigger>
+                <SheetContent className=" pt-14">
+                  <SheetHeader>
+                    <SheetDescription className=" text-neutral-950 text-lg font-semibold">
+                      <Accordion type="single" collapsible>
+                        {MENUS.map((menu) => (
+                          <>
+                            <AccordionItem value={"item-" + menu.item}>
+                              <AccordionTrigger className=" pl-4">
+                                {menu.title}
+                              </AccordionTrigger>
+                              {menu.submenu?.map((subMenu) => (
+                                <>
+                                  <Link href={subMenu.path}>
+                                    <SheetClose className=" flex flex-col w-full items-start justify-start">
+                                      <AccordionContent className=" hover:text-neutral-600 pl-6 items-start justify-start">
+                                        <p className=" text-left text-base">{subMenu.title}</p>
+                                      </AccordionContent>
+                                    </SheetClose>
+                                  </Link>
+                                </>
+                              ))}
+                            </AccordionItem>
+                          </>  
+                        ))}
+                      </Accordion>
+                      {MENU.map((menu) => (
+                        <>
+                          <SheetClose className=" flex flex-col w-full hover:underline border-b" asChild>
+                            <Link href={menu.path}> 
+                              <div className=" flex flex-col w-full items-start justify-center">
+                                <p className=" flex w-full items-center justify-start py-4 pl-4">{menu.title}</p>
+                              </div>
+                            </Link>
+                          </SheetClose>
+                        </>
+                      ))}
+                      <Dialog>
+                        <DialogTrigger className=" flex w-full items-start justify-start mt-2">
+                          <Button className=" bg-black w-full h-12 items-center justify-start">
+                            <p className=" text-left font-bold text-lg">PPID</p>
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent>
+                          <DialogHeader>
+                            <DialogTitle className=" font-bold">Menu PPID</DialogTitle>
+                            <DialogDescription>
+                              <Accordion type="single" collapsible>
+                                <SheetClose asChild>
+                                  {/* <DialogPrimitive.Close asChild> */}
+                                    <Link href="/ppid/tentang" className=" font-semibold text-neutral-950 text-base border-b w-full flex py-4">Tentang PPID</Link>
+                                  {/* </DialogPrimitive.Close> */}
+                                </SheetClose>
+                                  {PPID.map((menu) => (
+                                    <>
+                                <AccordionItem value={"item-" + menu.item}>
+                                  <AccordionTrigger className=" font-semibold text-neutral-950 text-base">{menu.title}</AccordionTrigger>
+                                  {menu.submenu?.map((subMenuPpid) => (
+                                    <>
+                                <Link href={subMenuPpid.path }>
+                                  <SheetClose  className=" flex flex-col w-full hover:bg-neutral-50">
+                                    {/* <DialogPrimitive.Close className=" flex flex-col w-full hover:bg-neutral-50"> */}
+                                  <AccordionContent className=" flex flex-col w-full ">
+                                    <div className=" flex flex-col w-full items-center justify-start  py-3 px-3 -mb-4">
+                                      <p>{subMenuPpid.title}</p>
+                                    </div>
+                                  </AccordionContent>
+                                  {/* </DialogPrimitive.Close> */}
+                                  </SheetClose>
+                                  </Link>
+                                    </>
+                                  ))}
+                                </AccordionItem>
+                                    </>
+                                  ))}
+                              </Accordion>
+                            </DialogDescription>
+                          </DialogHeader>
+                        </DialogContent>
+                      </Dialog>
+                    </SheetDescription>
+                  </SheetHeader>
+                </SheetContent>
+              </Sheet>
+            </nav>
           </div>
         </Container>
       </div>

@@ -25,7 +25,7 @@ export default function Hero() {
                 Kementerian Perhubungan Republik Indonesia.
               </p>
               <div className="flex w-full gap-4">
-                <Link href="/layanan/penerbangan-perintis">
+                <Link href="/layanan/penerbangan-perintis/departure">
                   <Button
                     variant="default"
                     className="group rounded-full border bg-white px-6 text-neutral-900 transition-all duration-200 hover:bg-white"

@@ -11,6 +11,7 @@ export type TMenu = {
   path: string;
   variant?: IconProps["variant"];
   submenu?: TMenu[];
+  item?: Number;
 };
 export type TMenuPpid = {
   title: string;
