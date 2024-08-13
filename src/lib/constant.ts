@@ -130,6 +130,7 @@ export const MENUS: Array<TMenu> = [
   {
     title: "Layanan",
     path: "/layanan",
+    item: 1,
     submenu: [
       {
         title: "Penerbangan Perintis",
@@ -144,6 +145,7 @@ export const MENUS: Array<TMenu> = [
   {
     title: "Tentang",
     path: "/tentang",
+    item: 2,
     submenu: [
       {
         title: "Struktur Organisasi",

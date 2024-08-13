@@ -20,7 +20,7 @@ export const INFORMASIBERKALA: Array<TBerkala> = [
         judul: "Kegiatan, Program dan Rencana",
         deskripsi: "Informasi mengenai Ringkasan Program dan Rencana Kegiatan yang di jalankan di lingkungan Kantor UPBU Harun Thohir - Gresik :",
         link: "Rencana Kerja Anggaran Tahun 2023",
-        path: "/",
+        path: "/pdf/Rencana Kinerja Tahunan 2024 BUHT.pdf",
     },
     {
         no: 4,
