@@ -11,7 +11,7 @@ import { animateScroll } from "react-scroll";
 export default function Footer() {
   return (
     <>
-      <div className="flex w-full bg-stone-950 pb-10 pt-16">
+      <div className="flex w-full bg-stone-950 pb-5 pt-10">
         <Container>
           <div className="mb-10 grid w-full gap-x-20 gap-y-10 lg:grid-cols-2">
             {/* begin: left */}
@@ -56,7 +56,7 @@ export default function Footer() {
                   {TAUTAN_LAIN.map((tautan) => (
                     <>
                       <li className="text-sm transition-all duration-200 hover:text-neutral-400 lg:text-base">
-                        <Link href={tautan.path}>{tautan.name}</Link>
+                        <Link href={tautan.path} target="_blank">{tautan.name}</Link>
                       </li>
                     </>
                   ))}
@@ -70,6 +70,7 @@ export default function Footer() {
                       <li>
                         <Link
                           href={sosmed.path}
+                          target="_blank"
                           className="transition-all duration-200 hover:text-neutral-400"
                         >
                           <sosmed.icon size={30} />
@@ -83,14 +84,14 @@ export default function Footer() {
             {/* end: right */}
           </div>
           {/* begin: bottom */}
-          <div className="flex w-full items-center justify-between border-t border-neutral-500 pt-10">
+          <div className="flex w-full items-center justify-between border-t border-neutral-500 pt-5">
             <p className="w-full max-w-3xl text-sm text-neutral-400 lg:text-base">
               Copyright © 2024 Bandar Udara Harun Thohir - Gresik. All rights
               reserved.
             </p>
             <div className="flex w-full items-center justify-end">
               <button
-                className="group relative flex aspect-square w-10 cursor-pointer items-center justify-center gap-1 overflow-hidden rounded-full bg-white lg:w-12"
+                className="group relative flex aspect-square w-8 cursor-pointer items-center justify-center gap-1 overflow-hidden rounded-full bg-white lg:w-12"
                 onClick={() =>
                   animateScroll.scrollToTop({
                     smooth: "easeInOutQuart",
@@ -100,13 +101,13 @@ export default function Footer() {
                 }
               >
                 <ArrowUp
-                  size="30"
+                  size="26"
                   color="#3a3a3a"
                   variant="Linear"
                   className="flex items-center gap-2 transition-all duration-500 group-hover:-translate-y-9 group-hover:opacity-0"
                 />
                 <ArrowUp
-                  size="30"
+                  size="26"
                   color="#3a3a3a"
                   variant="Linear"
                   className="absolute flex translate-y-9 items-center gap-2 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100"

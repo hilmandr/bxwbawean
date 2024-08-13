@@ -1,18 +1,9 @@
 "use client";
 
-import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
-import React from "react";
+import LenisScroll from "./lenis-scroll";
 
-export default function Provider({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      {children}
-      <ProgressBar
-        height="4px"
-        color="#232322"
-        options={{ showSpinner: false }}
-        shallowRouting
-      />
-    </>
-  );
+
+
+export default function Providers({ children }: { children: React.ReactNode }) {
+  return <LenisScroll>{children}</LenisScroll>;
 }

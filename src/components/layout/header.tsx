@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 
 import { Button } from "../ui/button";
 import {
@@ -10,17 +10,23 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../ui/tooltip";
-
 import { usePathname } from "next/navigation";
 import { cn } from "../../lib/utils";
 import { useScrollPosition } from "~/hooks/use-scroll-position";
 import Container from "../common/container";
-import { MENU, MENUS } from "~/lib/constant";
+import { MENU, MENUS, PPID } from "~/lib/constant";
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion"
+import * as DialogPrimitive from "@radix-ui/react-dialog"
 
 export default function Header() {
   // hooks
   const pathname = usePathname();
-
   const actualPathName = useMemo<string>(() => {
     const arrPathname = pathname.split("/");
     arrPathname.splice(0, 2);
@@ -36,6 +42,7 @@ export default function Header() {
         : pathname.startsWith(menu),
     [pathname],
   );
+  const [open, setOpen] = useState(false);
 
   return (
     <>
@@ -43,11 +50,11 @@ export default function Header() {
         className={cn(
           "fixed top-0 z-50 flex h-24 w-full transform items-center text-neutral-200 transition-all duration-500",
           {
-            "h-20 transform bg-black/90 shadow-lg backdrop-blur-md transition-all duration-500":
+            "h-20 transform bg-black/70 shadow-lg backdrop-blur-md transition-all duration-500":
               actualPathName !== "/",
           },
           {
-            "h-20 transform bg-black/90 shadow-lg backdrop-blur-md transition-all duration-500":
+            "h-20 transform bg-black/70 shadow-lg backdrop-blur-md transition-all duration-500":
               scrollPosition > 100,
           },
         )}
@@ -77,8 +84,8 @@ export default function Header() {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Button
-                          variant={activeMenu(menu.path) ? "outline" : "ghost"}
-                          className="rounded-lg hover:bg-transparent"
+                          variant="ghost"
+                          className={activeMenu(menu.path)?"rounded-lg text-white hover:bg-transparent border-white border ":" rounded-lg hover:bg-transparent hover:border-white border-transparent border hover:border duration-50 transition-all"}
                         >
                           <Link
                             href={menu.path}
@@ -94,15 +101,13 @@ export default function Header() {
                         // className="bg-white"
                       >
                         {menu.submenu && (
-                          <div className="mt-2 flex flex-col gap-2">
+                          <div className=" my-1 flex flex-col gap-2">
                             {menu.submenu.map((submenu) => (
                               <Button
                                 key={submenu.title}
                                 size="sm"
-                                variant={
-                                  activeMenu(submenu.path) ? "outline" : "ghost"
-                                }
-                                className="justify-start text-slate-900 hover:bg-transparent"
+                                variant="ghost"
+                                className={activeMenu(submenu.path) ? "justify-start text-slate-900 bg-slate-200" : "justify-start text-slate-900 hover:bg-slate-200 "}
                                 asChild
                               >
                                 <Link href={submenu.path}>{submenu.title}</Link>
@@ -118,8 +123,8 @@ export default function Header() {
               {MENU.map((menu) => (
                 <>
                   <Button
-                    variant={activeMenu(menu.path) ? "outline" : "ghost"}
-                    className="rounded-lg hover:bg-transparent"
+                    variant="ghost"
+                    className={activeMenu(menu.path)?"rounded-lg text-white hover:bg-transparent border-white border":"rounded-lg hover:bg-transparent hover:border-white border-transparent border hover:border duration-50 transition-all"}
                   >
                     <Link href={menu.path} className="font-semibold text-white">
                       {menu.title}
@@ -127,6 +132,44 @@ export default function Header() {
                   </Button>
                 </>
               ))}
+              <Dialog>
+                <DialogTrigger><Button className=" bg-black/50">PPID</Button></DialogTrigger>
+                <DialogContent>
+
+                  <DialogHeader>
+                    <DialogTitle className=" font-bold">Menu PPID</DialogTitle>
+                    <DialogDescription>
+                      <Accordion type="single" collapsible>
+                        <DialogPrimitive.Close asChild>
+
+                            <Link href="/ppid/tentang" className=" font-semibold text-neutral-950 text-base border-b w-full flex py-4">Tentang PPID</Link>
+
+                        </DialogPrimitive.Close>
+                          {PPID.map((menu) => (
+                            <>
+                        <AccordionItem value={"item-" + menu.item}>
+                          <AccordionTrigger className=" font-semibold text-neutral-950 text-base">{menu.title}</AccordionTrigger>
+                          {menu.submenu?.map((subMenuPpid) => (
+                            <>
+                         <Link href={subMenuPpid.path }>
+                          <DialogPrimitive.Close className=" flex flex-col w-full hover:bg-neutral-50">
+                          <AccordionContent className=" flex flex-col w-full ">
+                            <div className=" flex flex-col w-full items-center justify-start  py-3 px-3 -mb-4">
+                              <p>{subMenuPpid.title}</p>
+                            </div>
+                          </AccordionContent>
+                          </DialogPrimitive.Close>
+                          </Link>
+                            </>
+                          ))}
+                        </AccordionItem>
+                            </>
+                          ))}
+                      </Accordion>
+                    </DialogDescription>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
             </nav>
             {/* end: right */}
           </div>

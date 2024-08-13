@@ -1,13 +1,17 @@
 import { Mulish } from "next/font/google";
 import {
+  Airplane,
   AirplaneSquare,
+  Building3,
   Category2,
   DocumentDownload,
   Folder,
+  Icon,
   Instagram,
   Map1,
   MenuBoard,
   Message2,
+  Messages1,
   Mobile,
   Sms,
   UserSquare,
@@ -20,10 +24,19 @@ import {
   TFaq,
   TLayanan,
   TMenu,
+  TMenuPpid,
   TSidenav,
   TSosmedFooter,
   TTautanFooter,
 } from "~/types";
+import { IconType } from "react-icons/lib";
+
+export interface IMenuDashboard {
+  label: string;
+  path: string;
+  icon: IconType | Icon;
+  // active: string;
+}
 
 export const mulish = Mulish({
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -36,6 +49,11 @@ export const SIDENAV: Array<TSidenav> = [
     title: "Dashboard",
     path: "/dashboard",
     icon: Category2,
+  },
+  {
+    title: "Jadwal Penerbangan",
+    path: "/dashboard/jadwal-penerbangan/departure",
+    icon: Airplane,
   },
   {
     title: "Berita",
@@ -65,6 +83,49 @@ export const MENU: Array<TMenu> = [
   },
 ];
 
+export const PPID: Array<TMenuPpid> = [
+  {
+    title: "Informasi Publik",
+    item: 2,
+    submenu: [
+      {
+        title: "Informasi Berkala",
+        path: "/ppid/informasi-publik/berkala"
+      },
+      {
+        title: "Informasi Setiap Saat",
+        path: "/ppid/informasi-publik/setiap-saat"
+      },
+      {
+        title: "Informasi Serta Merta",
+        path: "/ppid/informasi-publik/serta-merta"
+      },
+    ]
+  },
+  {
+    title: "Pelayanan",
+    item: 3,
+    submenu: [
+      {
+        title: "Maklumat Pelayanan & Standar Biaya",
+        path: "/ppid/pelayanan/maklumat-layanan"
+      },
+      {
+        title: "Prosedur Permohonan Informasi",
+        path: "/ppid/pelayanan/inf-publik"
+      },
+      {
+        title: "Prosedur Permohonan Keberatan Informasi",
+        path: "/ppid/pelayanan/keberatan-inf"
+      },
+      {
+        title: "Prosedur Pengajuan Sengketa Informasi Publik",
+        path: "/ppid/pelayanan/sengketa-inf"
+      },
+    ]
+  },
+];
+
 export const MENUS: Array<TMenu> = [
   {
     title: "Layanan",
@@ -72,16 +133,12 @@ export const MENUS: Array<TMenu> = [
     submenu: [
       {
         title: "Penerbangan Perintis",
-        path: "/layanan/penerbangan-perintis",
+        path: "/layanan/penerbangan-perintis/departure",
       },
       {
         title: "Permohonan PAS",
         path: "/layanan/permohonan-pas",
       },
-      // {
-      //   title: "Permohonan Informasi",
-      //   path: "/layanan/permohonan-informasi",
-      // },
     ],
   },
   {
@@ -114,7 +171,7 @@ export const HOME_LAYANAN: Array<TLayanan> = [
     title: "Penerbangan Perintis",
     description:
       "Layanan penerbangan perintis mencakup berbagai fasilitas dan kemudahan bagi penumpang, mulai dari pemesanan tiket, check-in, hingga proses naik pesawat.",
-    path: "/layanan/penerbangan-perintis",
+    path: "/layanan/penerbangan-perintis/departure",
   },
   {
     thumbnail: UserSquare,
@@ -123,13 +180,13 @@ export const HOME_LAYANAN: Array<TLayanan> = [
       "Kami juga menyediakan layanan permohonan pengajuan PAS Bandara untuk akses tertentu di dalam area bandar udara.",
     path: "/layanan/permohonan-pas",
   },
-  {
-    thumbnail: DocumentDownload,
-    title: "Permohonan Informasi",
-    description:
-      "Kami menyediakan layanan permohonan informasi bagi pihak-pihak yang memiliki kepentingan untuk dapat mengakses informasi seputar bandar udara.",
-    path: "/layanan/permohonan-informasi",
-  },
+  // {
+  //   thumbnail: DocumentDownload,
+  //   title: "Permohonan Informasi",
+  //   description:
+  //     "Kami menyediakan layanan permohonan informasi bagi pihak-pihak yang memiliki kepentingan untuk dapat mengakses informasi seputar bandar udara.",
+  //   path: "/layanan/permohonan-informasi",
+  // },
 ];
 
 export const FAQ: Array<TFaq> = [
