@@ -1,4 +1,4 @@
-import { getServerSession, NextAuthOptions, User } from "next-auth";
+import { NextAuthOptions, User } from "next-auth";
 import withAuth from "next-auth/middleware";
 import CredentialsProvider from "next-auth/providers/credentials";
 
@@ -47,6 +47,3 @@ export const authOptions: NextAuthOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
 };
-
-
-export const getServerAuthSession = () => getServerSession(authOptions);
