@@ -29,13 +29,6 @@ export const INFORMASIBERKALA: Array<TBerkala> = [
         link: "Statistik Kepegawaian dan Keuangan Tahun 2023",
         path: "/images/ppid/statistik.jpeg",
     },
-    // {
-    //     no: 0,
-    //     judul: "",
-    //     deskripsi: "",
-    //     link: "",
-    //     path: "/",
-    // },
 ]
 
 export const BERKALASUB: Array<TBerkalaSub> = [
@@ -62,7 +55,7 @@ export const INFSERTAMERTA: Array<TSertaMerta> = [
         judul: "Informasi yang Dapat Mengancam Hajat Hidup Orang Banyak dan Ketertiban Umum",
         deskripsi: "Informasi Serta Merta yang dapat menggangu hajat hidup masyarakat.",
         link: "Informasi Serta Merta yang dapat menggangu hajat hidup masyarakat.",
-        path: "/",
+        path: "https://www.instagram.com/reel/C47TXWZyy9F/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     }
 ]
 

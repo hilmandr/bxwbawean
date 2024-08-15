@@ -1,9 +1,8 @@
 
-import Container from "../../../../components/common/container";
+import Container from "~/components/common/container";
 import React from "react";
 import { api } from "~/trpc/server";
 import { Metadata } from "next";
-
 import { Berita } from "~/server/db/schema";
 import Link from "next/link";
 import { Calendar } from "iconsax-react";
@@ -41,12 +40,12 @@ export default async function BeritaDetail({params} : PageParams) {
     const beritaLain = await api.berita.getAll()
   return (
     <>
-      <Container className=" px-16">
         <div className=" lg:flex relative pt-28 pb-10 gap-x-10">
           <div className=" max-w-4xl w-full min-w-px">
             <DetailBerita berita={beritaItems || ({} as Berita)} />
           </div>
-          <div className=" flex flex-col w-full max-w-sm">
+          <Container>
+          <div className=" flex flex-col w-full max-w-sm mt-5">
             <h1 className=" pb-2 border-b font-medium">Berita Terbaru</h1>
             <div className=" flex flex-col gap-x-4 mt-4 gap-y-4">
             {beritaLain?.slice(0, 6).map((berita : any) => (
@@ -80,8 +79,8 @@ export default async function BeritaDetail({params} : PageParams) {
               ))}   
             </div>
           </div>
+        </Container>
         </div>
-      </Container>
     </>
   );
 }
