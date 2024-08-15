@@ -5,7 +5,7 @@ import { mulish } from "~/lib/constant";
 
 export const metadata: Metadata = {
   title: "Kantor UPBU Harun Thohir - Gresik",
-  metadataBase: new URL("https://bandaraharunthohir.vercel.app/"),
+  metadataBase: new URL("https://bandaraharunthohir.id/"),
   description: "Website resmi Kantor UPBU Harun Thohir - Gresik",
   icons: "/images/logo-kemenhub.PNG",
   creator: "Kantor UPBU Harun Thohir - Gresik",

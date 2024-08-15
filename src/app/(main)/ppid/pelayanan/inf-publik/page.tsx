@@ -24,7 +24,7 @@ export default function PermohonanInformasiPublik() {
                 <div className=" flex w-full max-w-4xl items-center justify-center relative aspect-[4.1/3]">
                     <Image src="/images/ppid/permohonan-inf-publik.png" alt="" fill className=" w-full h-full object-cover object-center"/>
                 </div>
-                <Link href="/pdf/1. Formulir permohonan informasi.docx" target="_blank" className=" mt-4">
+                <Link href="/pdf/Formulir Permohonan Informasi.docx" target="_blank" className=" mt-4">
                     <Button>Unduh Formulir Permohonan Informasi</Button>
                 </Link>
             </Container>

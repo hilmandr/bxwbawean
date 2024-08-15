@@ -27,11 +27,11 @@ export const generateMetadata = async ({
     openGraph: {
       title: post?.judul + " - UPBU Harun Thohir",
       description: post?.summary,
-      images: ["/image/" + post?.thumbnail as string],
+      images: [post?.thumbnail as string],
     },
      twitter: {
       card: "summary_large_image",
-      images: ["/image/" + post?.thumbnail as string],
+      images: [post?.thumbnail as string],
     },
   };
 };
