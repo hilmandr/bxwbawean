@@ -16,11 +16,13 @@ import Container from "../container";
 import useDebounce from "~/hooks/use-debounce";
 import { api } from "~/trpc/react";
 import { format } from "date-fns";
+import { id } from "date-fns/locale/id";
 
 export default function DeparturesPage() {
   const THeadLg = useMediaQuery("(min-width: 768px)");
   const [searchArr, setSearchArr] = useState("");
   const debounceSearch = useDebounce(searchArr, 500);
+  const locale = id;
 
   const {data: arrivals} = api.jadwal.getArrival.useQuery({
     search: debounceSearch
@@ -44,11 +46,10 @@ export default function DeparturesPage() {
               {THeadLg && (
                 <TableHeader>
                   <TableRow>
-                    <TableHead>TANGGAL</TableHead>
+                    <TableHead>HARI / TANGGAL</TableHead>
                     <TableHead>JAM KEBERANGKATAN</TableHead>
                     <TableHead>TUJUAN</TableHead>
                     <TableHead>MASKAPAI</TableHead>
-                    <TableHead>{""}</TableHead>
                   </TableRow>
                 </TableHeader>
               )}
@@ -70,7 +71,7 @@ export default function DeparturesPage() {
                 <TableRow>
                   <TableCell>
                     <div className=" md:p-0 p-2">
-                      {format(arrs.tanggal, "PPP")}
+                      {format(arrs.tanggal, "PPPP", {locale})}
                       {!THeadLg && (
                         <>
                           <div>

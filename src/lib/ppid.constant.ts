@@ -27,7 +27,7 @@ export const INFORMASIBERKALA: Array<TBerkala> = [
         judul: "Statistik dan Informasi",
         deskripsi: "Informasi mengenai Statistik dan Informasi Kepegawaian dan Keuangan Setiap Tahunnya :",
         link: "Statistik Kepegawaian dan Keuangan Tahun 2023",
-        path: "/",
+        path: "/images/ppid/statistik.jpeg",
     },
     // {
     //     no: 0,
