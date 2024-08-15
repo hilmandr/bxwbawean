@@ -38,7 +38,7 @@ export default function HomeSectionBerita() {
                 <div className="flex aspect-[4/1.5] w-full flex-col items-center justify-center">
                   <EmojiSad size="96" color="#333333" variant="TwoTone" />
                   <h1 className="pt-5">
-                    Oops! There is no project to show at this time.
+                    Saat ini belum ada berita untuk ditampilkan.
                   </h1>
                 </div>
               </>

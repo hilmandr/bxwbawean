@@ -1,5 +1,6 @@
-import { NextAuthOptions, User, getServerSession } from "next-auth";
+import { NextAuthOptions, getServerSession } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import axiosInstance from "~/lib/axios-instance";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -11,26 +12,18 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         try {
-          if (
-            credentials?.username === process.env.USERNAME_LOGIN &&
-            credentials?.password === process.env.PASSWORD_LOGIN
-          ) {
-            const user: User = { id: "", name: "Admin" };
-            return user;
-          }
+          const res = await axiosInstance.post("/auth/login/", {
+            username: credentials?.username,
+            password: credentials?.password,
+          });
 
-          return null;
+          return res.data.data;
         } catch (error) {
           throw new Error("something went wrong");
         }
       },
     }),
   ],
-  pages: {
-    signIn: "/login",
-    error: "/error",
-  },
-
   callbacks: {
     async jwt({ token, user }) {
       return { ...token, ...user };
