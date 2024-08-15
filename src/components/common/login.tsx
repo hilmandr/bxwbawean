@@ -50,20 +50,18 @@ export default function Login() {
         <div className=" flex flex-col w-full h-screen items-center justify-center bg-[url('/images/banner-1.JPG')] bg-cover bg-center shadow-lg ">
           <div className=" w-full h-screen bg-black/20 absolute z-0"></div>
           <Container className=" z-10">
-            <div className=" grid lg:grid-cols-2 w-full items-center justify-center text-white gap-x-20">
-              <div className=" flex flex-col items-start justify-center gap-8">
+            <div className=" grid lg:grid-cols-2 grid-cols-1 w-full items-center justify-center text-white gap-x-20">
+              <div className=" lg:flex hidden flex-col items-start justify-center gap-8">
                 <h1 className=" text-6xl font-bold">Selamat Datang!</h1>
                 <div className=" w-24 h-1 bg-white"></div>
                 <p className="">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-                  neque non debitis, eos numquam omnis, deserunt odio maxime
-                  molestiae eius praesentium, libero minus dolores facere. Aut
-                  voluptatibus iure quisquam ea.
+                  Silakan login terlebih dahulu untuk menambahkan berita, kegiatan, laporan dan jadwal penerbangan perintis.
                 </p>
               </div>
               <div className=" flex flex-col items-center justify-center">
-                <div className=" flex flex-col w-full h-[540px] rounded-2xl items-center border-white/30 border justify-center gap-y-6 bg-white/20 shadow-lg ring-1 ring-black/5 backdrop-blur-sm">
+                <div className=" flex flex-col w-full max-w-lg h-[540px] rounded-2xl items-center border-white/30 border justify-center gap-y-6 bg-white/20 shadow-lg ring-1 ring-black/5 backdrop-blur-sm">
                   <h1 className=" text-4xl font-bold">Login</h1>
+                  <p className=" text-center max-w-xs">Lengkapi username dan password untuk masuk ke halaman admin</p>
                   <Form {...form}>
                     <form
                       action=""
