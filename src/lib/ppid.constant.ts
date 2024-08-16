@@ -43,7 +43,7 @@ export const BERKALASUB: Array<TBerkalaSub> = [
                 gambar: "/images/ppid/febria.jpg",
                 paragraf: "",
                 link: "LHKPN Febria Setyowati Suyanto",
-                path: "/"
+                path: "/pdf/Pengumuman_Harta_Kekayaan_LHKPN_471985.pdf"
             }
         ]
     }
