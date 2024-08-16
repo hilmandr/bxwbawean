@@ -95,3 +95,12 @@ export type TSetiapSaat = {
   link?: string;
   path?: string;
 }
+
+export type TBarjas = {
+  judul?: string;
+  deskripsi?: string;
+  path?: string;
+  no?: number;
+  docName?: string;
+  subDoc? : TBarjas[];
+}

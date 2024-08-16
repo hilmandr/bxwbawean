@@ -9,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "~/components/ui/table"
-import { BERKALASUB, INFORMASIBERKALA } from "~/lib/ppid.constant";
+import { BARJAS, BERKALASUB, INFORMASIBERKALA } from "~/lib/ppid.constant";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -42,7 +42,7 @@ export default function InformasiBerkala() {
                             {INFORMASIBERKALA.map((berkala) => (
                                 <>
                                 <TableRow className=" flex-1 w-full items-start">
-                                <TableCell className=" border text-center">{berkala.no}</TableCell>
+                                <TableCell className=" border text-center align-top">{berkala.no}</TableCell>
                                 <TableCell>
                                     <div className=" flex flex-col w-full gap-y-2">
                                         <h3 className=" text-base font-semibold">{berkala.judul}</h3>
@@ -53,10 +53,37 @@ export default function InformasiBerkala() {
                                 </TableCell>
                             </TableRow></>
                             ))}
+                            {BARJAS.map((barjas) => (
+                                <>
+                                    <TableRow className=" flex-1 w-full items-start">
+                                        <TableCell className=" border text-center align-top">{barjas.no}</TableCell>
+                                        <TableCell>
+                                            <div className=" flex flex-col w-full gap-y-2">
+                                                <h3 className=" text-base font-semibold">{barjas.judul}</h3>
+                                                <span className=" text-sm italic">Deskripsi</span>
+                                                <p>{barjas.deskripsi}</p>
+                                                <div className=" flex  bg-neutral-100 p-6 w-full mt-4">
+                                                    <div className=" grid grid-rows-12 grid-flow-col gap-x-8 gap-y-4 w-full">
+                                                        {barjas.subDoc?.map((barjasSubDoc, i) => (
+                                                            <>
+                                                                <div className=" flex w-full" key={i}>
+                                                                    <Link href={`${barjasSubDoc.path}`} target="_blank" className=" text-blue-800 font-bold">
+                                                                        <p>{i+1}. {barjasSubDoc.docName}</p>
+                                                                    </Link>
+                                                                </div>
+                                                            </>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </TableCell>
+                                    </TableRow>
+                                </>
+                            ))}
                             {BERKALASUB.map((berkalaSub) => (
                                 <>
                                 <TableRow className=" flex-1 w-full items-start">
-                                <TableCell className=" border text-center">{berkalaSub.no}</TableCell>
+                                <TableCell className=" border text-center align-top">{berkalaSub.no}</TableCell>
                                 <TableCell>
                                     <div className=" flex flex-col w-full gap-y-2">
                                         <h3 className=" text-base font-semibold">{berkalaSub.judul}</h3>
