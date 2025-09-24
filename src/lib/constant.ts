@@ -90,17 +90,17 @@ export const PPID: Array<TMenuPpid> = [
     submenu: [
       {
         title: "Informasi Berkala",
-        path: "/ppid/informasi-publik/berkala"
+        path: "/ppid/informasi-publik/berkala",
       },
       {
         title: "Informasi Setiap Saat",
-        path: "/ppid/informasi-publik/setiap-saat"
+        path: "/ppid/informasi-publik/setiap-saat",
       },
       {
         title: "Informasi Serta Merta",
-        path: "/ppid/informasi-publik/serta-merta"
+        path: "/ppid/informasi-publik/serta-merta",
       },
-    ]
+    ],
   },
   {
     title: "Pelayanan",
@@ -108,21 +108,21 @@ export const PPID: Array<TMenuPpid> = [
     submenu: [
       {
         title: "Maklumat Pelayanan & Standar Biaya",
-        path: "/ppid/pelayanan/maklumat-layanan"
+        path: "/ppid/pelayanan/maklumat-layanan",
       },
       {
         title: "Prosedur Permohonan Informasi",
-        path: "/ppid/pelayanan/inf-publik"
+        path: "/ppid/pelayanan/inf-publik",
       },
       {
         title: "Prosedur Permohonan Keberatan Informasi",
-        path: "/ppid/pelayanan/keberatan-inf"
+        path: "/ppid/pelayanan/keberatan-inf",
       },
       {
         title: "Prosedur Pengajuan Sengketa Informasi Publik",
-        path: "/ppid/pelayanan/sengketa-inf"
+        path: "/ppid/pelayanan/sengketa-inf",
       },
-    ]
+    ],
   },
 ];
 
@@ -250,7 +250,7 @@ export const TAUTAN_LAIN: Array<TTautanFooter> = [
     path: "https://hubud.dephub.go.id/hubud/website/",
   },
   {
-    name: "Kantor Ototritas Bandar Udara Wil III",
+    name: "Kantor Otoritas Bandar Udara Wil III",
     path: "https://otban3.dephub.go.id/",
   },
 ];
