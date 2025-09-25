@@ -2,6 +2,7 @@ import {
   TBarjas,
   TBerkala,
   TBerkalaSub,
+  TLaporanInformasi,
   TSertaMerta,
   TSetiapSaat,
 } from "~/types";
@@ -132,6 +133,17 @@ export const INFSETIAPSAAT: Array<TSetiapSaat> = [
   },
 ];
 
+export const LAPINFORMASI: Array<TLaporanInformasi> = [
+  {
+    no: 1,
+    judul: "Laporan Tahunan Layanan Informasi Publik Tahun 2024",
+    deskripsi:
+      "Laporan mengenai permohonan informasi yang diminta di Lingkungan Kantor UPBU Harun Thohir",
+    link: "Laporan PPID Tahun 2024",
+    path: "/pdf/Laporan PPID Tahun 2024.pdf",
+  },
+];
+
 export const BARJAS: Array<TBarjas> = [
   {
     judul: "Dokumen Pengadaan Barang dan Jasa",
@@ -211,16 +223,16 @@ export const BARJAS: Array<TBarjas> = [
         path: "/pdf/barjas/Pemilihan Penyedia.pdf",
       },
       {
-        docName: "Berita Acara Penetapan atau Pengumuman Penyedia",
+        docName: "Laporan Hasil Pemilihan Penyedia",
         path: "",
       },
       {
         docName: "Surat Penunjukan Penyedia Barang/Jasa (SPPBJ)",
-        path: "pdf/barjas/20. SPPBJ.pdf",
+        path: "/pdf/barjas/20. SPPBJ.pdf",
       },
       {
         docName: "Surat Perjanjian Kemitraan",
-        path: "pdf/barjas/Perjanjian Kerja.pdf",
+        path: "/pdf/barjas/Perjanjian Kerja.pdf",
       },
       {
         docName: "Surat Penugasan atau Surat Pembentukan Tim Swakelola",
@@ -267,7 +279,7 @@ export const BARJAS: Array<TBarjas> = [
         path: "/pdf/barjas/32.SPM_111_00153A_1755161210701.pdf",
       },
       {
-        docName: "SP2D",
+        docName: "Surat Perintah Pencairan Dana",
         path: "/pdf/barjas/33.Daftar SP2D Satker - 2025-09-02T132721.401.pdf",
       },
       {
