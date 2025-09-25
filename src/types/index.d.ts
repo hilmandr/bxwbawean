@@ -106,3 +106,13 @@ export type TBarjas = {
   docName?: string;
   subDoc?: TBarjas[];
 };
+
+export type TLaporanInformasi = {
+  no?: number;
+  judul: string;
+  deskripsi: string;
+  paragraf?: string;
+  gambar?: string;
+  link?: string;
+  path?: string;
+};

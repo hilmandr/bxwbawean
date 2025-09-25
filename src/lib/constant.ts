@@ -100,6 +100,10 @@ export const PPID: Array<TMenuPpid> = [
         title: "Informasi Serta Merta",
         path: "/ppid/informasi-publik/serta-merta",
       },
+      {
+        title: "Laporan Layanan Informasi Publik",
+        path: "/ppid/informasi-publik/laporan-informasi",
+      },
     ],
   },
   {
