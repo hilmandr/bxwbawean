@@ -2,16 +2,12 @@ import { Mulish } from "next/font/google";
 import {
   Airplane,
   AirplaneSquare,
-  Building3,
   Category2,
-  DocumentDownload,
   Folder,
   Icon,
-  Instagram,
   Map1,
   MenuBoard,
   Message2,
-  Messages1,
   Mobile,
   Sms,
   UserSquare,
@@ -200,32 +196,14 @@ export const FAQ: Array<TFaq> = [
     item: "item-1",
     question: "Dimana letak Bandar Udara Harun Thohir?",
     answer:
-      "Bandar Udara Harun Thohir - Gresik terletak di Desa Tanjungori, Kecamatan Tambak, Pulau Bawean, Kabupaten Gresik Provinsi Jawa Timur (xx Kilometer arah utara dari Pulau Jawa.",
+      "Bandar Udara Harun Thohir - Gresik terletak di Desa Tanjungori, Kecamatan Tambak, Pulau Bawean, Kabupaten Gresik Provinsi Jawa Timur (120-135 km dari Kabupaten Gresik, Jawa Timur).",
   },
   {
     item: "item-2",
     question:
       "Apakah layanan pemesanan tiket pesawat dari dan ke Bandara Harun Thohir sudah bisa diakses melalui aplikasi?",
     answer:
-      "Layanan pemesanan tiket pesawat dari dan ke Bandara Harun Thohir saat ini belum tersedia di dalam aplikasi dan hanya melayanai melalui pesan Whatsapp.",
-  },
-  {
-    item: "item-3",
-    question: "Bagaimana cara memesan tiket pesawat dari Pulau Bawean?",
-    answer:
-      "Pemesanan tiket penerbangan perintis dari Pulau Bawean (Bandara Harun Thohir) dapat dilakukan melalui Ticketing Susi Air Bawean pesan Whatsapp pada nomor 08123456789.",
-  },
-  {
-    item: "item-4",
-    question: "Bagaimana cara memesan tiket pesawat dari Surabaya?",
-    answer:
-      "Pemesanan tiket penerbangan perintis dari Surabaya (Bandara Juanda) dapat dilakukan melalui Ticketing Susi Air Surabaya pesan Whatsapp pada nomor 08123456789.",
-  },
-  {
-    item: "item-5",
-    question: "Bagaimana cara memesan tiket pesawat dari Sumenep?",
-    answer:
-      "Pemesanan tiket penerbangan perintis dari Sumenep (Bandara Trunojoyo) dapat dilakukan melalui Ticketing Susi Air Sumenep pesan Whatsapp pada nomor 08123456789.",
+      "Layanan pemesanan tiket pesawat dari dan ke Bandara Harun Thohir saat ini sudah bisa diakses melalui 3 cara, yaitu melalui aplikasi Web Resmi Susi Air, Agen Resmi Susi Air Surabaya, dan Aplikasi Traveloka.",
   },
 ];
 
@@ -260,8 +238,8 @@ export const TAUTAN_LAIN: Array<TTautanFooter> = [
 ];
 
 export const SOSMED: Array<TSosmedFooter> = [
-  { icon: FaInstagram, path: "" },
-  { icon: FaYoutube, path: "" },
-  { icon: FaTiktok, path: "" },
+  { icon: FaInstagram, path: "https://www.instagram.com/bxwbawean/" },
+  { icon: FaYoutube, path: "https://www.youtube.com/@bxwbawean" },
+  { icon: FaTiktok, path: "https://www.tiktok.com/@bxwbawean" },
   { icon: FaXTwitter, path: "" },
 ];
