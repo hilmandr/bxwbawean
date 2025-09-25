@@ -52,12 +52,11 @@ export const INFORMASIBERKALA: Array<TBerkala> = [
   {
     no: 4,
     judul: "Statistik dan Informasi",
-    deskripsi:
-      "Informasi mengenai Statistik dan Informasi Kepegawaian dan Keuangan Setiap Tahunnya :",
+    deskripsi: "Informasi mengenai Informasi Kepegawaian Setiap Tahunnya :",
     subLink: [
       {
-        link: "Statistik Kepegawaian dan Keuangan Tahun 2023",
-        path: "/images/ppid/statistik.jpeg",
+        link: "Informasi Kepegawaian",
+        path: "/pdf/DATA KEPEGAWAIAN HARUN THOHIR.xlsx",
       },
     ],
   },
@@ -81,7 +80,7 @@ export const BERKALASUB: Array<TBerkalaSub> = [
       {
         judul: "Febria Setyowati Suyanto",
         deskripsi: "Kepala Kantor UPBU Harun Thohir - Gresik",
-        gambar: "/images/ppid/febria.jpg",
+        gambar: "/images/IMG_6027.png",
         paragraf: "",
         link: "LHKPN Febria Setyowati Suyanto",
         path: "/pdf/LHKPN2024.pdf",
