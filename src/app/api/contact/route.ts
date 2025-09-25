@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, telepon, pesan } = await request.json();
+    const { nama, email, telepon, pesan } = await request.json();
 
     const transporter = nodemailer.createTransport({
       // service: "zoho",
@@ -20,11 +20,11 @@ export async function POST(request: NextRequest) {
       from: email,
       to: process.env.MY_EMAIL_RECIEVER,
       replyTo: email,
-      subject: "Send Email Tutorial",
+      subject: "Email dari website bandara",
       html: `
-        <h3>Hello ${name}</h3>
-        <li> number: ${telepon}</li> 
-        <li> message: ${pesan}</li> 
+        <h3>Hello ${nama}</h3>
+        <li> Nomor Telepon: ${telepon}</li> 
+        <li> Isi Pesan: ${pesan}</li> 
         `,
     };
 
